@@ -1,0 +1,2609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Metal Fabrication</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#111;
+}
+
+/* ===== TOP INFO BAR ===== */
+.top-bar{
+  display:flex;
+  position: sticky;
+  scroll-margin-top:unset;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 40px;
+  border-bottom:1px solid #eee;
+  
+  
+}
+
+.logo{
+  font-size:26px;
+  font-weight:700;
+}
+
+.logo span{
+  color:#b07b4a;
+}
+
+.top-contact{
+  font-size:14px;
+}
+
+.top-btn{
+  padding:10px 18px;
+  border:1px solid #b07b4a;
+  background:#fff;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  background:#b07b4a;
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  background:#b07b4a;
+  transition:all .35s ease;
+}
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* CTA buttons desktop */
+.nav-cta{
+  display:flex;
+  gap:12px;
+}
+
+.nav-cta a{
+  padding:10px 18px;
+  border-radius:4px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.btn-services{
+  background:#fff;
+  color:#111;
+}
+
+.btn-contact{
+  background:#111;
+  color:#fff;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:26px;
+  height:3px;
+  background:white;
+}
+
+/* ===== MOBILE MENU FULLSCREEN ===== */
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background:#111;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  transform:translateY(-100%);
+  transition:.4s ease;
+  z-index:999;
+}
+
+.mobile-menu.active{
+  transform:translateY(0);
+}
+
+.mobile-menu a{
+  color:white;
+  font-size:22px;
+  text-decoration:none;
+}
+
+.close-btn{
+  position:absolute;
+  top:30px;
+  right:30px;
+  font-size:32px;
+  color:white;
+  cursor:pointer;
+}
+
+/* ===== HERO SECTION ===== */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:calc(100vh - 130px);
+}
+
+.hero-text{
+  padding:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-text h1{
+  font-size:52px;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  font-size:15px;
+  color:#555;
+  max-width:480px;
+}
+
+.hero-image{
+  background:url("feed13.webp") center/cover no-repeat;
+  position:relative;
+}
+
+.hero-overlay{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:45%;
+  background:rgba(255,255,255,.75);
+}
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:35px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  padding:14px 30px;
+  font-size:15px;
+  font-weight:600;
+  border-radius:4px;
+  text-decoration:none;
+  transition:.3s ease;
+  letter-spacing:.5px;
+}
+
+/* PRIMARY BUTTON */
+.hero-btn.primary{
+  background:#b07b4a;
+  color:white;
+}
+
+.hero-btn.primary:hover{
+  background:#8e5f35;
+}
+
+/* SECONDARY BUTTON */
+.hero-btn.secondary{
+  background:transparent;
+  color:#111;
+  border:2px solid #111;
+}
+
+.hero-btn.secondary:hover{
+  background:#111;
+  color:white;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-buttons{
+    justify-content:flex-start;
+  }
+
+  .hero-btn{
+    width:100%;
+    text-align:center;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .top-bar{
+    padding:12px 20px;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .navbar{
+    padding:14px 20px;
+  }
+
+  .nav-links,
+  .nav-cta{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text{
+    padding:50px 25px;
+  }
+
+  .hero-text h1{
+    font-size:36px;
+  }
+
+  .hero-image{
+    height:280px;
+  }
+
+  .hero-overlay{
+    width:65%;
+  }
+}
+.logo img{
+  height:48px;          /* desktop size */
+  width:auto;
+  object-fit:contain;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .logo img{
+    height:40px;        /* mobile size */
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+ 
+<div class="top-bar">
+  <div class="logo">
+    <img src="Screenshot (7) (1) (1).webp" alt="STACKLY Logo">
+  </div>
+
+  <div class="top-contact">(847) 640-6644 | sales@stackly.com</div>
+
+  <a href="404.html">
+    <button class="top-btn">Join Us</button>
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-links">
+    <a href="404.html">Home</a>
+    <a href="404.html">Services</a>
+    <a href="404.html">About</a>
+    <a href="404.html">Contact</a>
+    <a href="404.html">Log in</a>
+  </div>
+
+  <div class="nav-cta">
+    <a href="404.html" class="btn-services">Services</a>
+    <a href="404.html" class="btn-contact">Contact Us</a>
+  </div>
+
+  <div class="hamburger" onclick="openMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+  <a href="404.html">Home</a>
+  <a href="404.html">Services</a>
+  <a href="404.html">About</a>
+  <a href="404.html">Contact Us</a>
+  <a href="404.html">Log in</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      Corporate Solutions That Power Business Success
+    </h1>
+
+    <p>
+      Our corporate solutions combine advanced technology, data-driven insights, and scalable systems to empower businesses with efficiency, security, and long-term success.
+    </p>
+
+    <!-- HERO BUTTONS -->
+    <div class="hero-buttons">
+      <a href="404.html" class="hero-btn primary">Our Services</a>
+      <a href="404.html" class="hero-btn secondary">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="hero-overlay"></div>
+  </div>
+</section>
+
+
+<script>
+function openMenu(){
+  document.getElementById("mobileMenu").classList.add("active");
+}
+
+function closeMenu(){
+  document.getElementById("mobileMenu").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+  overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh;
+}
+
+.hero-text{
+  padding:120px 80px;
+}
+
+.hero-text h1{
+  font-size:56px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.hero-text p{
+  margin-top:20px;
+  color:#555;
+  max-width:520px;
+}
+
+.hero-img{
+  background:url("https://images.unsplash.com/photo-1581091215367-59ab6b56b6d0?auto=format&fit=crop&w=1400&q=80")
+  center/cover no-repeat;
+  position:relative;
+}
+
+.hero-img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#fff 8%,rgba(255,255,255,.1));
+}
+
+/* ================= SERVICES ================= */
+.services{
+  padding:120px 60px;
+  background:#f8fafc;
+}
+
+.services-title{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.services-title h2{
+  font-size:44px;
+  font-weight:700;
+}
+
+.services-title p{
+  margin-top:10px;
+  color:#64748b;
+}
+
+.services-grid{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+/* ================= FLIP CARD ================= */
+.service-card{
+  perspective:1200px;
+}
+
+.card-inner{
+  position:relative;
+  height:420px;
+  transform-style:preserve-3d;
+  transition:.9s cubic-bezier(.4,.2,.2,1);
+}
+
+.service-card:hover .card-inner,
+.service-card.active .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-face{
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  backface-visibility:hidden;
+  box-shadow:0 25px 45px rgba(0,0,0,.12);
+  overflow:hidden;
+}
+
+/* FRONT */
+.card-front{
+  background:#fff;
+}
+
+.card-front img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-front .content{
+  padding:25px;
+}
+
+.card-front h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.card-front p{
+  font-size:14px;
+  color:#555;
+}
+
+/* BACK */
+.card-back{
+  background:linear-gradient(135deg,#1e293b,#020617);
+  color:#fff;
+  transform:rotateY(180deg);
+  padding:35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card-back ul{
+  list-style:none;
+  margin-top:15px;
+}
+
+.card-back li{
+  margin-bottom:10px;
+  font-size:14px;
+  opacity:.9;
+}
+
+/* ================= RIPPLE BUTTON ================= */
+.ripple-btn{
+  position:relative;
+  overflow:hidden;
+  border:none;
+  padding:14px 32px;
+  border-radius:50px;
+  background:linear-gradient(135deg,#22c55e,#38bdf8);
+  color:#020617;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 15px 30px rgba(56,189,248,.35);
+  transition:.25s ease;
+}
+
+.ripple-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 25px 45px rgba(56,189,248,.45);
+}
+
+.ripple-btn span{
+  position:absolute;
+  border-radius:50%;
+  transform:scale(0);
+  animation:ripple 600ms linear;
+  background:rgba(255,255,255,.7);
+}
+
+@keyframes ripple{
+  to{
+    transform:scale(4);
+    opacity:0;
+  }
+}
+
+/* ================= SCROLL REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text{
+    padding:80px 30px;
+  }
+
+  .hero-text h1{
+    font-size:38px;
+  }
+
+  .services{
+    padding:90px 25px;
+  }
+}
+</style>
+</head>
+<body>
+
+
+</body>
+</html>
+
+<style>
+/* ================= CORPORATE SOLUTIONS ================= */
+#corp-solutions{
+  padding:90px 6%;
+  background:#ffffff;
+}
+
+#corp-solutions h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:14px;
+}
+
+#corp-solutions p.sub{
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 70px;
+  color:#555;
+  font-size:16px;
+}
+
+/* GRID */
+.corp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+
+/* CARD */
+.corp-card{
+  background:#0f4f4f;
+  color:#ffffff;
+  padding:34px 28px 36px;
+  border-radius:6px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition:.4s;
+}
+
+.corp-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 30px 60px rgba(0,0,0,0.25);
+}
+
+/* TITLE */
+.corp-card h3{
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+.corp-card span{
+  font-size:15px;
+  opacity:.9;
+}
+
+/* IMAGE */
+.corp-card img{
+  width:100%;
+  max-width:210px;
+  margin:28px 0 34px;
+  object-fit:contain;
+}
+
+/* BUTTON */
+.corp-card a{
+  margin-top:auto;
+  padding:12px 30px;
+  background:#0b3d3d;
+  color:#ffffff;
+  text-decoration:none;
+  border-radius:4px;
+  font-size:14px;
+  transition:.3s;
+}
+
+.corp-card a:hover{
+  background:#ffffff;
+  color:#0b3d3d;
+}
+
+/* FEATURED (OPTIONAL) */
+.corp-card.featured{
+  background:#0b3d3d;
+  transform:scale(1.03);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  #corp-solutions h2{
+    font-size:32px;
+  }
+}
+</style>
+
+<section id="corp-solutions">
+
+  <h2>Corporate Solutions</h2>
+  <p class="sub">
+    Tailored business solutions designed to improve efficiency,
+    accelerate growth, and build future-ready organizations.
+  </p>
+
+  <div class="corp-grid">
+
+    <!-- 1 -->
+    <div class="corp-card">
+      <h3>Business Strategy</h3>
+      <span>Enterprise Planning</span>
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80">
+      <a href="#">Explore Solution</a>
+    </div>
+
+    <!-- 2 -->
+    <div class="corp-card featured">
+      <h3>Customer Experience</h3>
+      <span>Growth Enablement</span>
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80">
+      <a href="404.html">Explore Solution</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="corp-card">
+      <h3>Digital Transformation</h3>
+      <span>Technology Consulting</span>
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978">
+      <a href="404.html">Explore Solution</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="corp-card">
+      <h3>Data & Analytics</h3>
+      <span>Business Intelligence</span>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">
+      <a href="404.html">Explore Solution</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="corp-card">
+      <h3>Digital Transformation</h3>
+      <span>Technology Consulting</span>
+      <img src="feed13.webp">
+      <a href="404.html">Explore Solution</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="corp-card">
+      <h3>Data & Analytics</h3>
+      <span>Business Intelligence</span>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">
+      <a href="404.html">Explore Solution</a>
+    </div>
+
+
+  </div>
+
+</section>
+
+</body>
+</html>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins, sans-serif;
+}
+
+/* SECTION */
+.client-section{
+  background:#041b1f;
+  padding:80px 0;
+  overflow:hidden;
+}
+
+/* SLIDER */
+.client-slider{
+  display:flex;
+  gap:28px;
+  width:max-content;
+  animation: slide 22s linear infinite;
+}
+
+/* CARD */
+.client-card{
+  width:230px;
+  height:150px;
+  background:#0e2a2f;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+  transition:.4s ease;
+}
+
+.client-card:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+/* CIRCLE CARD */
+.client-card.circle{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:#1aa7a1;
+}
+
+/* IMAGE */
+.client-card img{
+  width:70%;
+  height:auto;
+  object-fit:contain;
+}
+
+/* ANIMATION */
+@keyframes slide{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .client-card{
+    width:170px;
+    height:120px;
+  }
+  .client-card.circle{
+    width:130px;
+    height:130px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="client-section">
+  <div class="client-slider">
+
+    <!-- IMAGE CARDS -->
+    <div class="client-card">
+      <img src="abbott.webp">
+    </div>
+
+    <div class="client-card">
+      <img src="medplus.webp">
+    </div>
+
+    <div class="client-card">
+      <img src="medtronic.webp">
+    </div>
+
+    <!-- CIRCLE IMAGE -->
+    <div class="client-card circle">
+      <img src="feed13.webp">
+    </div>
+
+    <div class="client-card">
+      <img src="Screenshot 2026-02-03 143936.webp">
+    </div>
+
+    
+
+  </div>
+</section>
+
+</body>
+</html>
+
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f8fafc;
+  color:#0f172a;
+}
+
+/* HEADER */
+.about-header{
+  padding:90px 20px;
+  text-align:center;
+  background:rgb(207, 62, 110);
+  color:white;
+}
+
+.about-header h1{
+  font-size:42px;
+  animation:fadeDown 1s ease;
+}
+
+.about-header p{
+  max-width:700px;
+  margin:15px auto 0;
+  color:#f1f5f9;
+  animation:fadeUp 1.2s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* CONTENT */
+.about{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.about-block{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  margin-bottom:80px;
+}
+
+.about-block:nth-child(even){
+  direction:rtl;
+}
+
+.about-block:nth-child(even) > *{
+  direction:ltr;
+}
+
+.about-text h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.about-text p{
+  color:#475569;
+  line-height:1.7;
+}
+
+/* IMAGE */
+.about-img img{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* VALUES */
+.values{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.value{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.value:hover{
+  transform:translateY(-10px);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .about-block{
+    grid-template-columns:1fr;
+  }
+  .about-header h1{font-size:34px;}
+}
+</style>
+</head>
+
+<body>
+
+<style>
+.about-header{
+  padding:90px 24px;
+  background:linear-gradient(120deg,#f8fafc,#eef2f7);
+}
+
+.about-wrap{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+/* TEXT */
+.about-text h1{
+  font-size:52px;
+  margin-bottom:18px;
+  color:#0f172a;
+}
+
+.about-text p{
+  font-size:16px;
+  line-height:1.7;
+  color:#475569;
+  max-width:520px;
+}
+
+/* IMAGE */
+.about-image img{
+  width:100%;
+  border-radius:26px;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+  animation:float 6s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-wrap{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .about-text h1{
+    font-size:40px;
+  }
+  .about-text p{
+    margin:auto;
+  }
+}
+</style>
+
+<section class="about-header">
+  <div class="about-wrap">
+
+    <!-- TEXT -->
+    <div class="about-text">
+      <h1>About Stackly</h1>
+      <p>
+        Delivering innovative corporate solutions that empower
+        businesses through technology, digital transformation,
+        and AI-driven excellence.
+      </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Corporate Solutions">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT CONTENT -->
+<section class="about">
+
+  <!-- BLOCK 1 -->
+  <div class="about-block">
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>
+        Stackly is a corporate solutions provider focused on
+        building scalable, secure, and future-ready digital
+        systems for modern businesses.
+      </p>
+    </div>
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
+    </div>
+  </div>
+
+  <!-- BLOCK 2 -->
+  <div class="about-block">
+    <div class="about-text">
+      <h2>What We Do</h2>
+      <p>
+        We offer end-to-end corporate services including
+        web development, cloud solutions, digital transformation,
+        and enterprise IT support.
+      </p>
+    </div>
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786" alt="">
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <h2 style="text-align:center;">Why Choose Stackly</h2>
+  <div class="values">
+    <div class="value">
+      <h3>Enterprise Expertise</h3>
+      <p>Corporate-grade solutions built for long-term success.</p>
+    </div>
+    <div class="value">
+      <h3>Scalable Systems</h3>
+      <p>Technology designed to grow with your business.</p>
+    </div>
+    <div class="value">
+      <h3>Reliable Support</h3>
+      <p>Dedicated teams ensuring seamless operations.</p>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
+
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#020b0e;
+  color:#fff;
+}
+
+/* ===== HERO ===== */
+.stackly-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:80px 20px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* BG GLOW */
+.stackly-hero::before{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#ce3b4f,transparent 70%);
+  top:-150px;
+  right:-150px;
+  filter:blur(120px);
+}
+
+/* CONTENT */
+.hero-wrap{
+  max-width:1200px;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:center;
+  z-index:2;
+}
+
+/* TEXT */
+.hero-text h5{
+  color:#9c1818;
+  letter-spacing:3px;
+  font-size:14px;
+  margin-bottom:14px;
+}
+
+.hero-text h1{
+  font-size:56px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero-text h1 span{
+  background:linear-gradient(90deg,#ad1548,#d42424);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+  color:black;
+  max-width:520px;
+  margin-bottom:35px;
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:flex;
+  gap:18px;
+}
+
+.time-box{
+  background:#0c2a2f;
+  padding:18px 22px;
+  border-radius:14px;
+  text-align:center;
+  min-width:90px;
+}
+
+.time-box h2{
+  font-size:32px;
+  color:#1aa7a1;
+}
+
+.time-box span{
+  font-size:12px;
+  letter-spacing:1px;
+  color:#94a3b8;
+}
+
+/* BUTTON */
+.hero-btn{
+  margin-top:35px;
+  display:inline-block;
+  padding:14px 34px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#1cc2c2,#df3257);
+  color:#041b1f;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 40px rgba(26,167,161,.45);
+  transition:.4s;
+}
+
+.hero-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* IMAGE */
+.hero-img{
+  position:relative;
+}
+
+.hero-img img{
+  width:100%;
+  border-radius:24px;
+  animation:float 6s ease-in-out infinite;
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+
+/* FLOAT */
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-wrap{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-text h1{
+    font-size:40px;
+  }
+  .countdown{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="stackly-hero">
+  <div class="hero-wrap">
+
+    <!-- TEXT -->
+    <div class="hero-text">
+      <h5>COMING SOON</h5>
+      <h1>Upcoming <span>Stackly AI</span><br>Smart Business Intelligence</h1>
+      <p>
+        Stackly AI is launching soon — an intelligent platform designed to
+        automate decisions, optimize workflows, and power next-generation
+        enterprises.
+      </p>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown">
+        <div class="time-box">
+          <h2 id="days">00</h2>
+          <span>DAYS</span>
+        </div>
+        <div class="time-box">
+          <h2 id="hours">00</h2>
+          <span>HOURS</span>
+        </div>
+        <div class="time-box">
+          <h2 id="minutes">00</h2>
+          <span>MINUTES</span>
+        </div>
+        <div class="time-box">
+          <h2 id="seconds">00</h2>
+          <span>SECONDS</span>
+        </div>
+      </div>
+
+      <a href="404.html" class="hero-btn">Notify Me</a>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="AI Technology">
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ===== COUNTDOWN TIMER ===== */
+const launchDate = new Date("2026-03-01T00:00:00").getTime();
+
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = launchDate - now;
+
+  if(diff <= 0) return;
+
+  document.getElementById("days").innerText =
+    Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  document.getElementById("hours").innerText =
+    Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+  document.getElementById("minutes").innerText =
+    Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("seconds").innerText =
+    Math.floor((diff / 1000) % 60);
+},1000);
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+</body>
+</html>
+
+<style>
+/* ===== UNIQUE RESET ===== */
+#stk-blog-editorial *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ===== PAGE ===== */
+#stk-blog-editorial{
+  background:#050b1dz;
+  color:#ffffff;
+  font-family:'Poppins',sans-serif;
+  padding:100px 40px;
+}
+
+/* ===== GRID ===== */
+.stk-blog-grid{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+}
+
+/* ===== CARD ===== */
+.stk-blog-card{
+  position:relative;
+  height:520px;
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  text-decoration:none;
+  color:white;
+}
+
+/* IMAGE */
+.stk-blog-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .8s ease;
+}
+
+/* OVERLAY */
+.stk-blog-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:white);
+  z-index:1;
+}
+
+/* HOVER IMAGE ZOOM */
+.stk-blog-card:hover img{
+  transform:scale(1.08);
+}
+
+/* ===== CONTENT ===== */
+.stk-blog-content{
+  position:absolute;
+  bottom:0;
+  padding:30px;
+  z-index:2;
+}
+
+.stk-blog-tag{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  opacity:.9;
+  margin-bottom:10px;
+}
+
+.stk-blog-title{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  line-height:1.25;
+  margin-bottom:20px;
+}
+
+.stk-blog-link{
+  font-size:14px;
+  font-weight:500;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.stk-blog-link span{
+  transition:.3s;
+}
+
+.stk-blog-card:hover .stk-blog-link span{
+  transform:translateX(6px);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  #stk-blog-editorial{
+    padding:70px 20px;
+  }
+
+  .stk-blog-card{
+    height:460px;
+  }
+
+  .stk-blog-title{
+    font-size:22px;
+  }
+}
+.gallery-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:0px;
+  color:#0f172a;
+}
+
+.gallery-subtitle{
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 50px;
+  color:#64748b;
+  font-size:16px;
+}
+
+</style>
+</head>
+
+<body>
+<h2 class="gallery-title">Our Work Gallery</h2>
+<p class="gallery-subtitle">
+  Showcasing excellence through innovation and execution
+</p>
+
+<section id="stk-blog-editorial">
+
+  <div class="stk-blog-grid">
+
+    <!-- CARD 1 -->
+    <a href="404.html" class="stk-blog-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+      <div class="stk-blog-content">
+        <div class="stk-blog-tag">Guide</div>
+        <div class="stk-blog-title">
+          Modern business resilience
+        </div>
+        <div class="stk-blog-link">
+          Read more <span>↗</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="404.html" class="stk-blog-card">
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="">
+      <div class="stk-blog-content">
+        <div class="stk-blog-tag">Article</div>
+        <div class="stk-blog-title">
+          Digital infrastructure meets human design:
+          How physical AI transforms cities
+        </div>
+        <div class="stk-blog-link">
+          Read the article <span>→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="404.html" class="stk-blog-card">
+      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980" alt="">
+      <div class="stk-blog-content">
+        <div class="stk-blog-tag">Article</div>
+        <div class="stk-blog-title">
+          Modern business resilience:
+          A framework for continuous readiness
+        </div>
+        <div class="stk-blog-link">
+          Read the article <span>→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+</body>
+</html>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ================= HERO TESTIMONIAL ================= */
+.ht-testimonial{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:85vh;
+}
+
+/* LEFT CONTENT */
+.ht-left{
+  padding:120px 80px;
+}
+
+.ht-left h2{
+  font-size:44px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.ht-sub{
+  margin:15px 0 40px;
+  color:#64748b;
+  max-width:520px;
+}
+
+/* SLIDER */
+.ht-slider{
+  max-width:520px;
+  overflow:hidden;
+}
+
+.ht-track{
+  display:flex;
+  transition:transform .6s ease;
+}
+
+.ht-card{
+  min-width:100%;
+}
+
+.ht-card p{
+  font-size:16px;
+  line-height:1.8;
+  color:#444;
+  margin-bottom:25px;
+}
+
+.ht-card h4{
+  font-size:18px;
+  font-weight:600;
+}
+
+.ht-card span{
+  font-size:14px;
+  color:#64748b;
+}
+
+/* DOTS */
+.ht-dots{
+  display:flex;
+  margin-top:30px;
+}
+
+.ht-dots span{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#cbd5f5;
+  margin-right:10px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.ht-dots span.active{
+  background:#020617;
+}
+
+/* RIGHT CLIENT PHOTO */
+.ht-right{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f8fafc;
+}
+
+.ht-photo-card{
+  background:#ffffff;
+  padding:30px;
+  border-radius:24px;
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+  text-align:center;
+  max-width:320px;
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-12px); }
+}
+
+.ht-photo-card img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #020617;
+  margin-bottom:20px;
+}
+
+.ht-photo-card h4{
+  font-size:18px;
+  font-weight:600;
+}
+
+.ht-photo-card span{
+  font-size:14px;
+  color:#64748b;
+}
+
+/* SCROLL REVEAL */
+.ht-reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+
+.ht-reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .ht-testimonial{
+    grid-template-columns:1fr;
+  }
+
+  .ht-left{
+    padding:80px 30px;
+  }
+
+  .ht-left h2{
+    font-size:34px;
+  }
+
+  .ht-right{
+    padding:40px 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="ht-testimonial">
+  <!-- LEFT -->
+  <div class="ht-left ht-reveal">
+
+    <h2>What Our Clients Say</h2>
+    <p class="ht-sub">
+      Precision sheet metal fabrication trusted by industry leaders
+    </p>
+
+    <div class="ht-slider">
+      <div class="ht-track">
+
+        <div class="ht-card">
+          <p>
+            “Exceptional laser cutting accuracy and fabrication quality.
+            Their work helped us reduce waste and improve efficiency.”
+          </p>
+          <h4>Ramesh Kumar</h4>
+          <span>Manufacturing Head</span>
+        </div>
+
+        <div class="ht-card">
+          <p>
+            “Professional team with excellent engineering support.
+            Always delivers on time with consistent quality.”
+          </p>
+          <h4>Anita Sharma</h4>
+          <span>Operations Manager</span>
+        </div>
+
+        <div class="ht-card">
+          <p>
+            “Reliable welding and premium finishing.
+            We trust them for critical industrial components.”
+          </p>
+          <h4>Vikram Rao</h4>
+          <span>Project Engineer</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ht-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="ht-right">
+    <div class="ht-photo-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client Photo">
+      <h4>Ramesh Kumar</h4>
+      <span>Manufacturing Head</span>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const track = document.querySelector(".ht-track");
+  const dots = document.querySelectorAll(".ht-dots span");
+  const reveal = document.querySelector(".ht-reveal");
+  const photo = document.querySelector(".ht-photo-card img");
+  const name = document.querySelector(".ht-photo-card h4");
+  const role = document.querySelector(".ht-photo-card span");
+
+  const clients = [
+    { img:"https://randomuser.me/api/portraits/men/32.jpg", name:"Ramesh Kumar", role:"Manufacturing Head" },
+    { img:"https://randomuser.me/api/portraits/women/44.jpg", name:"Anita Sharma", role:"Operations Manager" },
+    { img:"https://randomuser.me/api/portraits/men/65.jpg", name:"Vikram Rao", role:"Project Engineer" }
+  ];
+
+  let index = 0;
+
+  function update(){
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(d=>d.classList.remove("active"));
+    dots[index].classList.add("active");
+
+    photo.src = clients[index].img;
+    name.textContent = clients[index].name;
+    role.textContent = clients[index].role;
+  }
+
+  dots.forEach((dot,i)=>{
+    dot.addEventListener("click",()=>{
+      index=i;
+      update();
+    });
+  });
+
+  setInterval(()=>{
+    index = (index + 1) % dots.length;
+    update();
+  },5000);
+
+  function revealOnScroll(){
+    if(reveal.getBoundingClientRect().top < window.innerHeight - 120){
+      reveal.classList.add("show");
+    }
+  }
+
+  window.addEventListener("scroll",revealOnScroll);
+  revealOnScroll();
+
+});
+</script>
+
+</body>
+</html>
+<section class="faq-section">
+  <div class="faq-container">
+
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <p class="faq-subtitle">
+      Answers to common questions about our precision sheet metal
+      fabrication and laser cutting services.
+    </p>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What materials do you work with?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        We work with stainless steel, mild steel, galvanized steel,
+        and aluminum for industrial and commercial applications.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What thickness can you laser cut?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Our laser machines can cut thin gauge sheets up to thick plates
+        with high precision and clean edges.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you provide custom fabrication?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Yes. We offer complete custom fabrication including bending,
+        welding, assembly, and surface finishing.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you support CAD & engineering files?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Our engineering team reviews CAD files, optimizes designs,
+        and supports prototyping and production.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Which industries do you serve?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        Manufacturing, automotive, electrical, construction,
+        industrial machinery, and OEM sectors.
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+    .faq-section{
+  padding:100px 20px;
+  background:#ffffff;
+}
+
+.faq-container{
+  max-width:800px;
+  margin:auto;
+}
+
+.faq-title{
+  font-size:42px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.faq-subtitle{
+  color:#64748b;
+  margin-bottom:40px;
+}
+
+/* FAQ ITEM */
+.faq-item{
+  border-bottom:1px solid #e5e7eb;
+}
+
+.faq-question{
+  width:100%;
+  background:none;
+  border:none;
+  padding:22px 0;
+  font-size:16px;
+  font-weight:600;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  text-align:left;
+}
+
+.faq-question span{
+  font-size:22px;
+  transition:transform .3s ease;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg);
+}
+
+/* ANSWER */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  font-size:15px;
+  line-height:1.7;
+  color:#475569;
+  transition:max-height .4s ease;
+}
+
+.faq-item.active .faq-answer{
+  max-height:500px; /* SAFE FOR MOBILE */
+  padding-bottom:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .faq-title{
+    font-size:32px;
+  }
+
+  .faq-question{
+    font-size:15px;
+  }
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.parentElement;
+
+      // Close others
+      document.querySelectorAll(".faq-item").forEach(faq => {
+        if(faq !== item) faq.classList.remove("active");
+      });
+
+      // Toggle current
+      item.classList.toggle("active");
+    });
+  });
+});
+</script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ================= BLOG PAGE ================= */
+.blog-page{
+  padding:100px 20px;
+}
+
+/* HEADER */
+.blog-header{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.blog-header h1{
+  font-size:38px;
+  font-weight:700;
+}
+
+.blog-header p{
+  margin-top:10px;
+  color:#6b7280;
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* WRAPPER */
+.blog-wrapper{
+  max-width:1200px;
+  margin:auto;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* CENTER CARD */
+.blog-main{
+  background:#d1d5db;
+  padding:80px 60px;
+  border-radius:35px;
+  text-align:center;
+  max-width:720px;
+  box-shadow:0 35px 80px rgba(0,0,0,.15);
+  z-index:2;
+}
+
+.blog-date{
+  font-size:14px;
+  color:#374151;
+}
+
+.blog-main h2{
+  font-size:28px;
+  margin:18px 0;
+  color:#a10063;
+}
+
+.blog-main p{
+  color:#374151;
+  max-width:520px;
+  margin:0 auto 35px;
+  line-height:1.7;
+}
+
+/* BUTTON */
+.blog-btn{
+  display:inline-block;
+  padding:14px 38px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#a10063,#d4007f);
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s ease;
+}
+
+.blog-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 25px 45px rgba(164,0,99,.35);
+}
+
+/* SIDE IMAGE CARDS */
+.blog-side{
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 25px 50px rgba(0,0,0,.25);
+}
+
+.blog-side img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* LEFT & RIGHT */
+.blog-left{
+  left:-70px;
+}
+
+.blog-right{
+  right:-70px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:992px){
+  .blog-wrapper{
+    flex-direction:column;
+  }
+
+  .blog-side{
+    position:static;
+    margin:30px 0;
+    width:90%;
+    max-width:320px;
+    height:220px;
+  }
+
+  .blog-main{
+    padding:60px 30px;
+  }
+}
+
+@media(max-width:600px){
+  .blog-header h1{
+    font-size:30px;
+  }
+
+  .blog-main h2{
+    font-size:22px;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="blog-page">
+
+  <!-- HEADER -->
+  <div class="blog-header">
+    <h1>— Our Blogs —</h1>
+    <p>
+      Explore the latest insights, tips, and business solutions that help
+      you grow smarter and faster.
+    </p>
+  </div>
+
+  <!-- BLOG FEATURE -->
+  <div class="blog-wrapper">
+
+    <!-- LEFT IMAGE -->
+    <div class="blog-side blog-left">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Blog image">
+    </div>
+
+    <!-- CENTER CONTENT -->
+    <div class="blog-main">
+      <span class="blog-date">15 September 2025</span>
+      <h2>5 Strategies to Scale Your Business</h2>
+      <p>
+        Discover proven methods for business growth—covering automation,
+        digital marketing, and team efficiency to help you scale faster.
+      </p>
+      <a href="404.html" class="blog-btn">READ MORE</a>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="blog-side blog-right">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Blog image">
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Hero</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#0f172a;
+}
+
+/* ============ HERO SECTION ============ */
+.corp-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:90px 24px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(120deg,#f8fafc,#eef2f7);
+}
+
+/* GLOW SHAPE */
+.corp-hero::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:radial-gradient(circle,#22c55e,transparent 70%);
+  top:-140px;
+  right:-140px;
+  filter:blur(120px);
+  opacity:.35;
+}
+
+/* WRAP */
+.corp-hero-wrap{
+  max-width:1200px;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+/* TEXT */
+.corp-hero-text h5{
+  font-size:14px;
+  letter-spacing:3px;
+  color:#22c55e;
+  margin-bottom:14px;
+}
+
+.corp-hero-text h1{
+  font-size:54px;
+  line-height:1.15;
+  margin-bottom:22px;
+}
+
+.corp-hero-text h1 span{
+  background:linear-gradient(90deg,#22c55e,#16a34a);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.corp-hero-text p{
+  max-width:520px;
+  font-size:16px;
+  color:#475569;
+  margin-bottom:36px;
+}
+
+/* BUTTON */
+.corp-btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 42px;
+  border-radius:50px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#052e16;
+  font-weight:600;
+  text-decoration:none;
+  overflow:hidden;
+  box-shadow:0 14px 45px rgba(34,197,94,.35);
+  transition:.4s ease;
+}
+
+.corp-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* RIPPLE */
+.corp-btn span{
+  position:absolute;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.5);
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  animation:ripple .6s ease;
+}
+
+@keyframes ripple{
+  to{
+    width:420px;
+    height:420px;
+    opacity:0;
+  }
+}
+
+/* IMAGE */
+.corp-hero-img img{
+  width:100%;
+  border-radius:26px;
+  box-shadow:0 40px 100px rgba(0,0,0,.25);
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-16px)}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .corp-hero-wrap{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .corp-hero-text h1{
+    font-size:40px;
+  }
+  .corp-hero-text p{
+    margin-inline:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="corp-hero">
+  <div class="corp-hero-wrap">
+
+    <!-- TEXT -->
+    <div class="corp-hero-text">
+      <h5>CORPORATE SOLUTIONS</h5>
+      <h1>Smart Digital Solutions for <span>Modern Enterprises</span></h1>
+      <p>
+        Stackly delivers enterprise-grade digital, AI, and technology solutions
+        that help businesses streamline operations, enhance productivity,
+        and achieve sustainable growth.
+      </p>
+
+      <a href="404.html" class="corp-btn" id="contactBtn">
+        Contact Us
+      </a>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="corp-hero-img">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Corporate Office">
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* RIPPLE EFFECT */
+document.getElementById("contactBtn").addEventListener("click",function(e){
+  const circle=document.createElement("span");
+  const rect=this.getBoundingClientRect();
+  circle.style.left=`${e.clientX-rect.left}px`;
+  circle.style.top=`${e.clientY-rect.top}px`;
+  this.appendChild(circle);
+  setTimeout(()=>circle.remove(),600);
+});
+</script>
+
+</body>
+</html>
+<!-- ================= FOOTER ================= -->
+<style>
+/* ===== FOOTER BASE ===== */
+#corp-footer{
+  background:#0f172a;
+  color:#ffffff;
+  margin-top:120px;
+}
+
+/* CONTAINER */
+.corp-footer-wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px 50px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:50px;
+}
+
+/* BRAND */
+.corp-footer-brand img{
+  height:72px;
+  margin-bottom:16px;
+}
+
+.corp-footer-brand p{
+  font-size:14px;
+  line-height:1.7;
+  color:#cbd5f5;
+  max-width:320px;
+}
+
+/* SOCIAL */
+.corp-social{
+  display:flex;
+  gap:14px;
+  margin-top:22px;
+}
+
+.corp-social a{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#1e293b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+}
+
+.corp-social a:hover{
+  background:#38bdf8;
+  color:#000;
+  transform:translateY(-4px);
+}
+
+/* COLUMN */
+.corp-footer-col h4{
+  font-size:15px;
+  margin-bottom:18px;
+}
+
+.corp-footer-col a{
+  display:block;
+  text-decoration:none;
+  color:#cbd5f5;
+  font-size:14px;
+  margin-bottom:12px;
+  transition:.3s;
+}
+
+.corp-footer-col a:hover{
+  color:#38bdf8;
+  transform:translateX(4px);
+}
+
+/* CONTACT */
+.corp-footer-col span{
+  display:block;
+  font-size:12px;
+  color:#94a3b8;
+  margin:14px 0 6px;
+}
+
+/* EMAIL BOX */
+.corp-email{
+  margin-top:18px;
+}
+
+.corp-email input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:4px;
+  border:none;
+  outline:none;
+  margin-bottom:10px;
+}
+
+.corp-email button{
+  width:100%;
+  padding:12px;
+  background:#38bdf8;
+  color:#000;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  border-radius:4px;
+  transition:.3s;
+}
+
+.corp-email button:hover{
+  background:#0ea5e9;
+}
+
+/* BOTTOM */
+.corp-footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding:20px;
+  text-align:center;
+  font-size:13px;
+  color:#94a3b8;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .corp-footer-wrap{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .corp-footer-brand p{
+    margin:auto;
+  }
+
+  .corp-social{
+    justify-content:center;
+  }
+
+  .corp-footer-col a:hover{
+    transform:none;
+  }
+}
+</style>
+
+<footer id="corp-footer">
+
+  <div class="corp-footer-wrap">
+
+    <!-- BRAND WITH LOGO -->
+    <div class="corp-footer-brand">
+      <!-- 🔥 ADD YOUR LOGO HERE -->
+      <img src="Screenshot 2026-02-03 143936.webp" alt="Stackly Corporate Solutions Logo">
+
+      <p>
+        Delivering innovative corporate solutions that empower
+        businesses through strategy, technology, and digital excellence.
+      </p>
+
+      <div class="corp-social">
+        <a href="404.html">in</a>
+        <a href="404.html">ig</a>
+        <a href="404.html">tw</a>
+        <a href="404.html">fb</a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="corp-footer-col">
+      <h4>Quick Links</h4>
+      <a href="404.html">Home</a>
+      <a href="404.html">About Us</a>
+      <a href="404.html">Corporate Solutions</a>
+      <a href="404.html">Case Studies</a>
+      <a href="404.html">Contact</a>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="corp-footer-col">
+      <h4>Services</h4>
+      <a href="404.html">Business Strategy</a>
+      <a href="404.html">Customer Experience</a>
+      <a href="404.html">Digital Transformation</a>
+      <a href="404.html">Data & Analytics</a>
+      <a href="404.html">ESG Consulting</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="corp-footer-col">
+      <h4>Contact Us</h4>
+
+      <span>Email</span>
+      <a href="mailto:info@stacklysolutions.com">
+        info@stacklysolutions.com
+      </a>
+
+      <span>Phone</span>
+      <a href="tel:+919000000000">
+        +91 90000 00000
+      </a>
+
+      <div class="corp-email">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="corp-footer-bottom">
+    © 2026 Stackly Corporate Solutions. All rights reserved.
+  </div>
+
+</footer>
